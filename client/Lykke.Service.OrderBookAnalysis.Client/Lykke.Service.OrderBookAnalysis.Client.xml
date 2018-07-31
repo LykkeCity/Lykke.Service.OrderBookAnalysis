@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lykke.Service.OrderBookAnalysis.Client</name>
+    </assembly>
+    <members>
+        <member name="M:Lykke.Service.OrderBookAnalysis.Client.AutofacExtension.RegisterOrderBookAnalysisClient(Autofac.ContainerBuilder,Lykke.Service.OrderBookAnalysis.Client.OrderBookAnalysisServiceClientSettings,System.Func{Lykke.HttpClientGenerator.HttpClientGeneratorBuilder,Lykke.HttpClientGenerator.HttpClientGeneratorBuilder})">
+            <summary>
+            Registers <see cref="T:Lykke.Service.OrderBookAnalysis.Client.IOrderBookAnalysisClient"/> in Autofac container using <see cref="T:Lykke.Service.OrderBookAnalysis.Client.OrderBookAnalysisServiceClientSettings"/>.
+            </summary>
+            <param name="builder">Autofac container builder.</param>
+            <param name="settings">OrderBookAnalysis client settings.</param>
+            <param name="builderConfigure">Optional <see cref="T:Lykke.HttpClientGenerator.HttpClientGeneratorBuilder"/> configure handler.</param>
+        </member>
+        <member name="T:Lykke.Service.OrderBookAnalysis.Client.IOrderBookAnalysisApi">
+            <summary>
+            OrderBookAnalysis client API interface.
+            </summary>
+        </member>
+        <member name="T:Lykke.Service.OrderBookAnalysis.Client.IOrderBookAnalysisClient">
+            <summary>
+            OrderBookAnalysis client interface.
+            </summary>
+        </member>
+        <member name="P:Lykke.Service.OrderBookAnalysis.Client.IOrderBookAnalysisClient.Api">
+            <summary>Application Api interface</summary>
+        </member>
+        <member name="T:Lykke.Service.OrderBookAnalysis.Client.OrderBookAnalysisClient">
+            <summary>
+            OrderBookAnalysis API aggregating interface.
+            </summary>
+        </member>
+        <member name="P:Lykke.Service.OrderBookAnalysis.Client.OrderBookAnalysisClient.Api">
+            <summary>Inerface to OrderBookAnalysis Api.</summary>
+        </member>
+        <member name="M:Lykke.Service.OrderBookAnalysis.Client.OrderBookAnalysisClient.#ctor(Lykke.HttpClientGenerator.IHttpClientGenerator)">
+            <summary>C-tor</summary>
+        </member>
+        <member name="T:Lykke.Service.OrderBookAnalysis.Client.OrderBookAnalysisServiceClientSettings">
+            <summary>
+            OrderBookAnalysis client settings.
+            </summary>
+        </member>
+        <member name="P:Lykke.Service.OrderBookAnalysis.Client.OrderBookAnalysisServiceClientSettings.ServiceUrl">
+            <summary>Service url.</summary>
+        </member>
+    </members>
+</doc>
