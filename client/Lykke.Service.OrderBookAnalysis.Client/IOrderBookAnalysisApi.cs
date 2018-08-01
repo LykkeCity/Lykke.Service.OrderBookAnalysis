@@ -1,5 +1,4 @@
 ﻿using JetBrains.Annotations;
-using Refit;
 
 namespace Lykke.Service.OrderBookAnalysis.Client
 {

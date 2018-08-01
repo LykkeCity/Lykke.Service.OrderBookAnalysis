@@ -1,0 +1,35 @@
+OrderBookAnalysisService:
+  Db:
+    LogsConnString:
+      settings-key: OrderBookAnalysisService-LogsConnString
+      types: [ AzureTableStorage ]
+    SnapshotsConnStr:
+      settings-key: OrderBookAnalysisService-SnapshotsConnStr
+      types: [ AzureTableStorage ]
+    SnapshotsTableName:
+      settings-key: OrderBookAnalysisService-SnapshotsTableName
+
+  OrderBooksSource:
+    ConnString:
+      settings-key: RawPriceRabbitMq
+      types: [ RabbitMq ]
+    Exchanges:
+      settings-key: OrderBookAnalysisService-OrderBooksSource-Exchangers
+      types: [ JsonArray ]
+    SnapshotInterval:
+      settings-key: OrderBookAnalysisService-OrderBooksSource-SnapshotInterval
+    SnapshotsExchange:
+      settings-key: OrderBookAnalysisService-OrderBooksSource-SnapshotsExchange
+
+MonitoringServiceClient:
+  MonitoringServiceUrl:
+    settings-key: MonitoringServiceUrl
+
+SlackNotifications:
+  AzureQueue:
+    ConnectionString:
+      settings-key: SlackNotificationsConnString
+      types: [ AzureTableStorage ]
+    QueueName:
+      settings-key: SlackQueueName
+      types: [ AzureTableStorage ]

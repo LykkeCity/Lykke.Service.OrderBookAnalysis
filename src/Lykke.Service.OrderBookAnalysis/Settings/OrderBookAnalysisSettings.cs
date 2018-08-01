@@ -1,5 +1,5 @@
 ﻿using JetBrains.Annotations;
-using Lykke.SettingsReader.Attributes;
+using Lykke.Service.OrderBookAnalysis.Services;
 
 namespace Lykke.Service.OrderBookAnalysis.Settings
 {
@@ -7,5 +7,6 @@ namespace Lykke.Service.OrderBookAnalysis.Settings
     public class OrderBookAnalysisSettings
     {
         public DbSettings Db { get; set; }
+        public OrderBooksSourceSettings OrderBooksSource { get; set; }
     }
 }

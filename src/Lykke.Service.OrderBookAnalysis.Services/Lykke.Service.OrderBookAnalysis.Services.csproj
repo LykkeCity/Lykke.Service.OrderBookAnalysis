@@ -1,8 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>Lykke.Service.OrderBookAnalysis.Services</AssemblyName>
     <RootNamespace>Lykke.Service.OrderBookAnalysis.Services</RootNamespace>
     <Version>1.0.0</Version>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lykke.Service.OrderBookAnalysis.AzureRepositories\Lykke.Service.OrderBookAnalysis.AzureRepositories.csproj" />
+    <ProjectReference Include="..\..\contract\Lykke.Service.OrderBookAnalysis.Contract\Lykke.Service.OrderBookAnalysis.Contract.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Lykke.Common.ExchangeAdapter.Server" Version="4.1.1" />
+    <PackageReference Include="Lykke.RabbitMqBroker" Version="7.2.0" />
+    <PackageReference Include="Lykke.SettingsReader" Version="2.4.1" />
+  </ItemGroup>
 </Project>

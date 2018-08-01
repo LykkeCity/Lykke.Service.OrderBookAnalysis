@@ -6,5 +6,10 @@ namespace Lykke.Service.OrderBookAnalysis.Settings
     {
         [AzureTableCheck]
         public string LogsConnString { get; set; }
+
+        [AzureTableCheck]
+        public string SnapshotsConnStr { get; set; }
+
+        public string SnapshotsTableName { get; set; }
     }
 }
