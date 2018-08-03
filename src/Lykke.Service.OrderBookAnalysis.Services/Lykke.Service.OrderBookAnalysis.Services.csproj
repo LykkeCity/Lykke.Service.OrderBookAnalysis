@@ -5,7 +5,4 @@
     <RootNamespace>Lykke.Service.OrderBookAnalysis.Services</RootNamespace>
     <Version>1.0.0</Version>
   </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Lykke.Service.OrderBookAnalysis.Core\Lykke.Service.OrderBookAnalysis.Core.csproj" />
-  </ItemGroup>
 </Project>

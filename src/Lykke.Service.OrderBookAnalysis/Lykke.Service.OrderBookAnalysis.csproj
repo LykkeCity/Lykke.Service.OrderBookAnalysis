@@ -28,7 +28,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lykke.Service.OrderBookAnalysis.AzureRepositories\Lykke.Service.OrderBookAnalysis.AzureRepositories.csproj" />
-    <ProjectReference Include="..\Lykke.Service.OrderBookAnalysis.Core\Lykke.Service.OrderBookAnalysis.Core.csproj" />
     <ProjectReference Include="..\Lykke.Service.OrderBookAnalysis.Services\Lykke.Service.OrderBookAnalysis.Services.csproj" />
   </ItemGroup>
   <ItemGroup>
