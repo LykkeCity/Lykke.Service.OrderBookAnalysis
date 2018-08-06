@@ -8,6 +8,8 @@ OrderBookAnalysisService:
       types: [ AzureTableStorage ]
     SnapshotsTableName:
       settings-key: OrderBookAnalysisService-SnapshotsTableName
+    MarketVolumeSnapshotsTable:
+      settings-key: OrderBookAnalysisService-MarketVolumeSnapshotsTable
 
   OrderBooksSource:
     ConnString:
@@ -20,6 +22,11 @@ OrderBookAnalysisService:
       settings-key: OrderBookAnalysisService-OrderBooksSource-SnapshotInterval
     SnapshotsExchange:
       settings-key: OrderBookAnalysisService-OrderBooksSource-SnapshotsExchange
+    MarketVolume:
+      settings-key: OrderBookAnalysisService-MarketVolume
+      types: [ JsonArray ]
+    MarketVolumeSnapshotsExchange:
+      settings-key: OrderBookAnalysisService-MarketVolumeSnapshotsExchange
 
 MonitoringServiceClient:
   MonitoringServiceUrl:

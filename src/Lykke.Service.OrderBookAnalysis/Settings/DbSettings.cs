@@ -11,5 +11,6 @@ namespace Lykke.Service.OrderBookAnalysis.Settings
         public string SnapshotsConnStr { get; set; }
 
         public string SnapshotsTableName { get; set; }
+        public string MarketVolumeSnapshotsTable { get; set; }
     }
 }
