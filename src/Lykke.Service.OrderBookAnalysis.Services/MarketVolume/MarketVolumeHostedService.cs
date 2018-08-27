@@ -13,6 +13,7 @@ using Lykke.Service.OrderBookAnalysis.Contract;
 using Lykke.Service.OrderBookAnalysis.Services.OrderBooks;
 using Lykke.Service.OrderBookAnalysis.Services.Settings;
 using Lykke.Service.OrderBookAnalysis.Services.Tools;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Hosting;
 
 namespace Lykke.Service.OrderBookAnalysis.Services.MarketVolume
@@ -77,12 +78,7 @@ namespace Lykke.Service.OrderBookAnalysis.Services.MarketVolume
                 yield return Observable.CombineLatest(
                     ob,
                     tp,
-                    (o, t) => new OrderBookWithCrossTickPrice
-                    {
-                        OrderBook = o,
-                        TickPrice = t,
-                        CrossRevert = mvs.CrossRevert
-                    });
+                    (o, t) => new OrderBookWithCrossTickPrice(mvs.CrossRevert, o, t, mvs.Decimals));
             }
         }
 
