@@ -58,27 +58,31 @@ namespace Lykke.Service.OrderBookAnalysis.Services.MarketVolume
             IObservable<OrderBook> orderBooks,
             IReadOnlyDictionary<string, IObservable<TickPrice>> tickPrices)
         {
-            foreach (var mvs in _settings.MarketVolume)
+            foreach (var marketVolumeSettings in _settings.MarketVolume)
             {
                 var ob = orderBooks.Where(x =>
-                    string.Equals(x.Asset, mvs.Asset, StringComparison.InvariantCultureIgnoreCase));
+                    string.Equals(x.Asset, marketVolumeSettings.Asset, StringComparison.InvariantCultureIgnoreCase));
 
-                var tp = tickPrices[mvs.CrossRateExchange]
+                var tp = tickPrices[marketVolumeSettings.CrossRateExchange]
                     .Where(x =>
                         string.Equals(
                             x.Asset,
-                            mvs.CrossAssetPair,
+                            marketVolumeSettings.CrossAssetPair,
                             StringComparison.InvariantCultureIgnoreCase)
 
                         && string.Equals(
                             x.Source,
-                            mvs.CrossRateSource,
+                            marketVolumeSettings.CrossRateSource,
                             StringComparison.InvariantCultureIgnoreCase));
 
                 yield return Observable.CombineLatest(
                     ob,
                     tp,
-                    (o, t) => new OrderBookWithCrossTickPrice(mvs.CrossRevert, o, t, mvs.Decimals));
+                    (o, t) => new OrderBookWithCrossTickPrice(
+                        marketVolumeSettings.CrossRevert,
+                        o,
+                        t,
+                        marketVolumeSettings.Decimals));
             }
         }
 
