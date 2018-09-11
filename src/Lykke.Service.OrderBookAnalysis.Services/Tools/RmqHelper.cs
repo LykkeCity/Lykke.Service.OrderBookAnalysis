@@ -6,22 +6,24 @@ using Lykke.Common.Log;
 using Lykke.RabbitMqBroker;
 using Lykke.RabbitMqBroker.Subscriber;
 
-namespace Lykke.Service.OrderBookAnalysis.Services
+namespace Lykke.Service.OrderBookAnalysis.Services.Tools
 {
     public static class RmqHelper
     {
-        public static IObservable<T> ReadAsJson<T>(RabbitMqSubscriptionSettings settings, ILogFactory log)
+        public static IObservable<T> ReadAsJson<T>(RabbitMqSubscriptionSettings settings, ILogFactory lf)
         {
+            var log = lf.CreateLog(settings);
+
             return Observable.Create<T>(async (obs, ct) =>
             {
                 var subscriber = new RabbitMqSubscriber<T>(
-                        log,
+                        lf,
                         settings,
                         new ResilientErrorHandlingStrategy(
                             settings: settings,
-                            logFactory: log,
+                            logFactory: lf,
                             retryTimeout: TimeSpan.FromSeconds(10),
-                            next: new DeadQueueErrorHandlingStrategy(log, settings)))
+                            next: new DeadQueueErrorHandlingStrategy(lf, settings)))
                     .SetMessageDeserializer(new JsonMessageDeserializer<T>())
                     .Subscribe(x =>
                     {
@@ -32,6 +34,7 @@ namespace Lykke.Service.OrderBookAnalysis.Services
 
                 using (subscriber.Start())
                 {
+                    log.Info($"Binding created {settings.ExchangeName} -> {settings.QueueName}");
                     var cts = new TaskCompletionSource<Unit>();
                     ct.Register(() => cts.SetResult(Unit.Default));
                     await cts.Task;

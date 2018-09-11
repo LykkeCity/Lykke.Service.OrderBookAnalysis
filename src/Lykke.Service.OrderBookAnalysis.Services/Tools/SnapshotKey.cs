@@ -1,4 +1,4 @@
-namespace Lykke.Service.OrderBookAnalysis.Services
+namespace Lykke.Service.OrderBookAnalysis.Services.Tools
 {
     public struct SnapshotKey
     {

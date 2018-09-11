@@ -1,5 +1,5 @@
 ﻿using JetBrains.Annotations;
-using Lykke.Service.OrderBookAnalysis.Services;
+using Lykke.Service.OrderBookAnalysis.Services.Settings;
 
 namespace Lykke.Service.OrderBookAnalysis.Settings
 {

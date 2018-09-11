@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Lykke.SettingsReader.Attributes;
 
-namespace Lykke.Service.OrderBookAnalysis.Services
+namespace Lykke.Service.OrderBookAnalysis.Services.Settings
 {
     public sealed class OrderBooksSourceSettings
     {
@@ -13,5 +13,8 @@ namespace Lykke.Service.OrderBookAnalysis.Services
 
         public TimeSpan SnapshotInterval { get; set; }
         public string SnapshotsExchange { get; set; }
+
+        public IReadOnlyCollection<MarketVolumeSnapshotSettings> MarketVolume { get; set; }
+        public string MarketVolumeSnapshotsExchange { get; set; }
     }
 }

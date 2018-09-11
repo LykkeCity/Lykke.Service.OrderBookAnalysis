@@ -3,9 +3,9 @@ using System.Linq;
 using Lykke.Common.ExchangeAdapter.Contracts;
 using Lykke.Service.OrderBookAnalysis.Contracts;
 
-namespace Lykke.Service.OrderBookAnalysis.Services
+namespace Lykke.Service.OrderBookAnalysis.Services.OrderBooks
 {
-    public static class OrderBookConverter
+    public static class OrderBookSnapshotConverter
     {
         public static OrderBookSnapshot FromOrderBook(DateTime ts, OrderBook orderBook)
         {
